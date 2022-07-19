@@ -24,6 +24,10 @@ Route::get('kouka3/edit', 'Kouka3Controller@edit');
 Route::post('kouka3/update', 'Kouka3Controller@update');
 Route::get('kouka3/del', 'Kouka3Controller@del');
 Route::post('kouka3/remove', 'Kouka3Controller@remove');
-
-
-
+//------------特定ページの保護----------------------------
+Route::get('hello','Kouka3Controller@index')->middleware('auth');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+//------------ログインページルート情報-----------------
+Route::get('kouka3/auth', 'Kouka3Controller@getAuth');
+Route::post('kouka3/auth', 'Kouka3Controller@postAuth');

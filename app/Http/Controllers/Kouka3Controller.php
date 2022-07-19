@@ -1,19 +1,37 @@
 <?php
 namespace App\Http\Controllers;
-
 use App\Person;
+
 use Illuminate\Http\Request;
+use App\Http\Requests\Kouka3Request;
+use Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Kouka3Controller extends Controller
 {
     public function index(Request $request)
+   {
+   if(isset($request->sort)){
+   $sort = $request->sort;
+   } else {
+      $sort = 'age';
+   }
+   $user = Auth::user();
+
+   $items = Person::orderBy($sort, 'asc')
+      ->simplePaginate(5);
+   $param = ['items' => $items, 'sort' => $sort ,'user' => $user];
+   return view('kouka3.index', $param);
+}
+
+    /* public function index(Request $request)
     {
         $items = Person::all();                              /* Personモデルがpeopleテーブルに対応している */
-        $param = ['input' => '','items' => $items];          /* peopleテーブルの全レコード取得し、$itemに入れる */
-        return view('kouka3.index', $param);                 /* 'items'でテンプレート$itemsに渡し、全データ表示 */
-    }
-
+        /* $param = ['input' => '','items' => $items];          /* peopleテーブルの全レコード取得し、$itemに入れる */
+       /*  return view('kouka3.index', $param);    */             /* 'items'でテンプレート$itemsに渡し、全データ表示 */
+    /* } */
+ 
     public function show(Request $request)
     {
         $item = Person::where('id',$request->id)->first();  /* whereで検索の条件を設定、firstを使ってレコードを取得 */
@@ -63,5 +81,24 @@ class Kouka3Controller extends Controller
         Person::find($request->id)->delete();              /* 指定のIDモデルを検索し、モデルのdeleteを呼び出し削除 */
         return redirect('/kouka3');
     }
+
+    public function getAuth(Request $request)
+{
+   $param = ['message' => 'ログインしてください。'];
+   return view('kouka3.auth', $param);
+}
+
+public function postAuth(Request $request)
+{
+   $email = $request->email;
+   $password = $request->password;
+   if (Auth::attempt(['email' => $email,
+           'password' => $password])) {
+       $msg = 'ログインしました。（' . Auth::user()->name . '）';
+   } else {
+       $msg = 'ログインに失敗しました。';
+   }
+   return view('kouka3.auth', ['message' => $msg]);
+}
 
 }
