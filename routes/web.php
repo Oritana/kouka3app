@@ -17,14 +17,13 @@ Route::get('/', function () {
 
 //--------Laravel 効果測定3---------------------
 Route::get('kouka3', 'Kouka3Controller@index');
-Route::post('kouka3/find', 'Kouka3Controller@find');
-Route::get('kouka3/show', 'Kouka3Controller@search');
+Route::get('kouka3/show', 'Kouka3Controller@show');
 Route::get('kouka3/add', 'Kouka3Controller@add');
 Route::post('kouka3/create', 'Kouka3Controller@create');
 Route::get('kouka3/edit', 'Kouka3Controller@edit');
 Route::post('kouka3/update', 'Kouka3Controller@update');
 Route::get('kouka3/del', 'Kouka3Controller@del');
 Route::post('kouka3/remove', 'Kouka3Controller@remove');
-/* Route::get('person', 'PersonController@index'); */
+
 
 

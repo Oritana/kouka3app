@@ -7,10 +7,10 @@
 @endsection
 
 @section('content')
-   <form action="/kouka3/remove" method="post">
+   <form action="/kouka3/remove" method="post">   {{-- 削除をクリック後、remove処理で削除し一覧に戻る --}}
    <table>
       @csrf
-      <input type="hidden" name="id" value="{{$item->id}}">
+      <input type="hidden" name="id" value="{{$item->id}}">  {{--  IDの値を送信し、そのIDのモデルを検索して削除する--}}
       <tr><th>name: </th><td>{{$item->name}}</td></tr>
       <tr><th>mail: </th><td>{{$item->mail}}</td></tr>
       <tr><th>age: </th><td>{{$item->age}}</td></tr>

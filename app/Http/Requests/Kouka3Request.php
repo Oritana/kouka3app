@@ -12,17 +12,18 @@ class Kouka3Request extends FormRequest
     return [
         'name' => 'required',
         'mail' => 'email',
-        'age' => ['numeric', new Myrule(5)],
+        'age' => ['numeric', new Myrule()],
     ];
     }
-    }
+}
 
+/* 
     /**
      * Get the validation rules that apply to the request.
      *
      * @return array
      */
-    public function rules()
+    /* public function rules()
     {
         return [
             'name' => 'required|max:10',
@@ -45,5 +46,6 @@ class Kouka3Request extends FormRequest
             'password.between' => 'パスワードは8文字以上16文字以内で入力して下さい。',
         ];
     }
-}
 
+
+ */

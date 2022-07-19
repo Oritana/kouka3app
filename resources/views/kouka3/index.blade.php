@@ -1,3 +1,5 @@
+{{-- 受講生一覧表示画面 --}}
+
 @extends('layouts.kouka3')
 
 @section('title', 'Students')
@@ -7,10 +9,8 @@
 @endsection
 
 @section('content')
-    <form action="/kouka3/find" method="post">
+    <form action="/kouka3/find" method="post">  {{-- 生徒の名前で検索 --}}
     @csrf
-    <input type="text" name="input" value="{{$input}}">
-    <input type="submit" value="検索">
     </form>
    <a href="/kouka3/add">新規登録</a>
    <table>
