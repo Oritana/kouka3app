@@ -25,8 +25,6 @@ Route::post('kouka3/update', 'Kouka3Controller@update');
 Route::get('kouka3/del', 'Kouka3Controller@del');
 Route::post('kouka3/remove', 'Kouka3Controller@remove');
 
-//------------特定ページの保護--------------------------------------
-Route::get('hello','Kouka3Controller@index')->middleware('auth');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 

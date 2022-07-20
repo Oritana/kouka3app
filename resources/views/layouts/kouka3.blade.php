@@ -10,7 +10,7 @@
    ul { font-size:12pt; }
    hr { margin: 25px 100px; border-top: 1px dashed #black; }
    .menutitle {font-size:14pt; font-weight:bold; margin: 0px; }
-   .content {margin:10px; height:500px;}
+   .content {margin:10px; height:550px;}
    .footer { text-align:right; font-size:10pt; margin:10px;
        border-bottom:solid 1px #660099; color:#660099; }
        th {background-color:#660099; color:fff; padding:5px 10px; text-align: center; }

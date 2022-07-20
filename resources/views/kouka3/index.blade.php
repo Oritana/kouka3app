@@ -10,19 +10,17 @@
 
 @section('menu_title')
 受講生【一覧画面】
-<tr><td><a href="/login"><font size="3">logout</font></a></td></tr>
 @endsection
 
 @section('content')
 @if (Auth::check())
 <p>USER: {{$user->name . ' (' . $user->email . ')'}}</p>
-@else
-<p>※ログインしていません。（<a href="/login">ログイン</a>|
-   <a href="/register">登録</a>）</p>
+<form action="{{ url('/logout') }}" method="post">
+    {{ csrf_field() }}
+    <button type="submit"><font size="3">logout</font></button>
+</form>
 @endif
 
-
-    <form action="/kouka3/find" method="post">  {{-- 生徒の名前で検索 --}}
     @csrf
     </form>
    <a href="/kouka3/add">新規登録</a>
@@ -38,7 +36,7 @@
        </tr>
    @endforeach
    </table>
-   {{$items->links()}}
+   {{$items->links()}}  {{-- ペジネーション --}}
 @endsection
 
 @section('footer')
