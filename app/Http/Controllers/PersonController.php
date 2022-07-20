@@ -15,7 +15,7 @@ class PersonController extends Controller
 
     public function add(Request $request)
 {
-   return view('person.add');
+   return view('kouka3.add');
 }
 
 public function create(Request $request)

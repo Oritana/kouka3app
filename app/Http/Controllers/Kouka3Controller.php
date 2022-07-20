@@ -15,23 +15,16 @@ class Kouka3Controller extends Controller
    if(isset($request->sort)){
    $sort = $request->sort;
    } else {
-      $sort = 'age';
+      $sort = 'name';   /* 年齢(昇順)で並べ替え */
    }
    $user = Auth::user();
 
-   $items = Person::orderBy($sort, 'asc')
-      ->simplePaginate(5);
-   $param = ['items' => $items, 'sort' => $sort ,'user' => $user];
+   $items = Person::orderBy('name', 'asc')              /* 名前の昇順(ABC)で並べ替え */
+      ->simplePaginate(10);                                   /* 1ページに10件ずつ表示 */
+   $param = ['items' => $items, 'sort' => 'name' ,'user' => $user];
    return view('kouka3.index', $param);
 }
 
-    /* public function index(Request $request)
-    {
-        $items = Person::all();                              /* Personモデルがpeopleテーブルに対応している */
-        /* $param = ['input' => '','items' => $items];          /* peopleテーブルの全レコード取得し、$itemに入れる */
-       /*  return view('kouka3.index', $param);    */             /* 'items'でテンプレート$itemsに渡し、全データ表示 */
-    /* } */
- 
     public function show(Request $request)
     {
         $item = Person::where('id',$request->id)->first();  /* whereで検索の条件を設定、firstを使ってレコードを取得 */

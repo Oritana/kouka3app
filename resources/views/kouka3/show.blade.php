@@ -10,7 +10,7 @@
 
 @section('content')
    <table>
-   <tr><th>Name(Age)</th><th>Mail</th></tr>
+   <tr><th>Student-ID : Name(Age)</th><th>Mail</th></tr>
        <tr>
            <td>{{$item->getData()}}</td>
            <td>{{$item->mail}}</td>

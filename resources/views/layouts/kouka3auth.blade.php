@@ -3,21 +3,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
    <title>@yield('title')</title>
    <style>
-   body {font-size:16pt; color:black; margin: 5px; }
-   h1 { font-size:40pt; text-align:right; color:black;
+   body {font-size:16pt; color:#660099; margin: 5px; }
+   h1 { font-size:40pt; text-align:right; color:#660099;
        margin:10px 10px 10px 10px; letter-spacing:-4pt; }
    ul { font-size:12pt; }
    hr { margin: 25px 100px; border-top: 1px dashed #black; }
    .menutitle {font-size:14pt; font-weight:bold; margin: 0px; }
    .content {margin:10px; }
    .footer { text-align:right; font-size:10pt; margin:10px;
-       border-bottom:solid 1px black; color:black; }
-       th {background-color:black; color:fff; padding:5px 10px; }
-       td {border: solid 1px black; color:black; padding:5px 10px; }
+       border-bottom:solid 1px #660099; color:black; }
+       th {background-color:#660099; color:fff; padding:5px 10px; }
+       td {border: solid 1px #660099; color:black; padding:5px 10px; }
    </style>
 </head>
 <body>
-   <h1>@yield('title')</h1>                  {{-- ディレクティブを使用したテンプレート --}}
+   <h1>@yield('title')</h1>          {{-- ディレクティブを使用したテンプレート --}}
    <h2>@yield('menu_title')</h2>
    <div class="menu_content">
    @yield('menu_content')

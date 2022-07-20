@@ -15,10 +15,13 @@ class CreatePeopleTable extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedBigInteger('user_id');   /* リレーションでusersテーブルのidを入れたカラムを作る */
             $table->string('name');
             $table->string('mail');
             $table->integer('age');
             $table->timestamps();
+            /* 外部usersテーブルのidカラムを参照する */
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -31,4 +34,6 @@ class CreatePeopleTable extends Migration
     {
         Schema::dropIfExists('people');
     }
+
+    
 }

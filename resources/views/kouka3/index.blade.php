@@ -1,11 +1,16 @@
 {{-- 受講生一覧表示画面 --}}
 
 @extends('layouts.kouka3')
+<style>
+    .pagination { front-size:10pt;}
+    .pagination li {display:inline-block}
+</style>
 
 @section('title', 'Students')
 
 @section('menu_title')
 受講生【一覧画面】
+<tr><td><a href="/login"><font size="3">logout</font></a></td></tr>
 @endsection
 
 @section('content')
@@ -22,7 +27,7 @@
     </form>
    <a href="/kouka3/add">新規登録</a>
    <table>
-   <tr><th>Name(Age)</th><th>Mail</th><th>Select</th><th>Update</th><th>Delete</th></tr>
+   <tr><th>Student-ID : Name(Age)</th><th>Mail</th><th>Select</th><th>Update</th><th>Delete</th></tr>
    @foreach ($items as $item)
        <tr>
            <td>{{$item->getData()}}</td>
@@ -33,6 +38,7 @@
        </tr>
    @endforeach
    </table>
+   {{$items->links()}}
 @endsection
 
 @section('footer')

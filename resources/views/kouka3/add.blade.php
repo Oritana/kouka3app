@@ -19,6 +19,7 @@
 </div>
 @endif
    <form action="/kouka3/create" method="post">  {{-- 新規登録クリック後、add処理で追加 --}}
+    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">    {{-- 隠しフィールドでuserのidも送る --}}
    <table>
       @csrf   {{-- ユーザデータ入力欄 --}}
     <tr><th>name: </th><td><input type="text" name="name" value="{{old('name')}}"></td></tr> {{--   {{old('name'))}}  は、入力値を保持 --}}

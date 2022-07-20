@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use App\Models\User;
 
 class Person extends Model
 {
@@ -21,5 +22,10 @@ class Person extends Model
     {
         return $this->id.':'.$this->name.'('.$this->age.')';  /* id,name,ageを文字列にしてまとめて返す */
     }
+
+   /*  public function person()
+    {
+        return $this->hasOne('App\person');
+    } */
 
 }
