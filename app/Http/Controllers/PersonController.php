@@ -18,7 +18,7 @@ class PersonController extends Controller
    return view('kouka3.add');
 }
 
-public function create(Request $request)
+/* public function create(Request $request)
 {
    $this->validate($request, Person::$rules);
    $person = new Person;
@@ -26,5 +26,6 @@ public function create(Request $request)
    unset($form['_token']);
    $person->fill($form)->save();
    return redirect('/person');
-}
+} */
+
 }

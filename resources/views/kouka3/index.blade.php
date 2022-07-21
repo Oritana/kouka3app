@@ -2,7 +2,7 @@
 
 @extends('layouts.kouka3')
 <style>
-    .pagination { front-size:10pt;}
+    .pagination { front-size:10pt;}          /* ペジネーションレイアウト設定 */
     .pagination li {display:inline-block}
 </style>
 

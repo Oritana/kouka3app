@@ -31,7 +31,7 @@ class Kouka3Controller extends Controller
         return view('kouka3.show', ['item' => $item]);
     }
 
-    public function add(Request $request)
+    public function add(Request $request)          /* 受講生徒登録 */
     {
         return view('kouka3.add');
     }
@@ -45,7 +45,7 @@ class Kouka3Controller extends Controller
         $person->fill($form)->save();               /* インスタンスに値を設定して保存 */
         return redirect('/kouka3');
     }
-    public function edit(Request $request)
+    public function edit(Request $request)              /* 受講生徒情報更新 */
     {
         $item = Person::find($request->id);
         return view('kouka3.edit', ['item' => $item]);
@@ -74,24 +74,4 @@ class Kouka3Controller extends Controller
         Person::find($request->id)->delete();              /* 指定のIDモデルを検索し、モデルのdeleteを呼び出し削除 */
         return redirect('/kouka3');
     }
-
-    public function getAuth(Request $request)
-{
-   $param = ['message' => 'ログインしてください。'];
-   return view('kouka3.auth', $param);
-}
-
-public function postAuth(Request $request)
-{
-   $email = $request->email;
-   $password = $request->password;
-   if (Auth::attempt(['email' => $email,
-           'password' => $password])) {
-       $msg = 'ログインしました。（' . Auth::user()->name . '）';
-   } else {
-       $msg = 'ログインに失敗しました。';
-   }
-   return view('kouka3.auth', ['message' => $msg]);
-}
-
 }
