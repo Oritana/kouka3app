@@ -19,6 +19,7 @@
 <body>
    <h1>@yield('title')</h1>          {{-- ディレクティブを使用したテンプレート --}}
    <h2>@yield('menu_title')</h2>
+   
    <div class="menu_content">
    @yield('menu_content')
    </div>

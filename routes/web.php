@@ -29,8 +29,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //------------ログインページルート情報------------------------------
-Route::get('kouka3/auth', 'Kouka3Controller@getAuth');
-Route::post('kouka3/auth', 'Kouka3Controller@postAuth');
+/* Route::get('kouka3/auth', 'Kouka3Controller@getAuth');
+Route::post('kouka3/auth', 'Kouka3Controller@postAuth'); */
 
 
 

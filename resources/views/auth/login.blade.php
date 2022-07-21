@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<img src="{{ asset('css/campus.jpg') }}" width="1350" height="400"alt="campus">
 
 @section('content')
 <div class="container">
@@ -53,7 +54,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-danger">
                                     {{ __('Login') }}
                                 </button>
 
@@ -70,4 +71,5 @@
         </div>
     </div>
 </div>
+
 @endsection

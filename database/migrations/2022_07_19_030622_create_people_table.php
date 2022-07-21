@@ -20,7 +20,7 @@ class CreatePeopleTable extends Migration
             $table->string('mail');
             $table->integer('age');
             $table->timestamps();
-            /* 外部usersテーブルのidカラムを参照する */
+            /* モデルのリレーション・・・外部usersテーブルのidカラムを参照する 　※hasOneができなかったため*/
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

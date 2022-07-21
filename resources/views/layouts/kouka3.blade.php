@@ -8,8 +8,10 @@
    h1 { font-size:50pt; text-align:right; color:#660099;
        margin:-20px 0px -30px 0px; letter-spacing:-4pt; }
    ul { font-size:12pt; }
-   hr { margin: 25px 100px; border-top: 1px dashed #black; }
+   hr {border: solid 2px #660099; }
    .menutitle {font-size:14pt; font-weight:bold; margin: 0px; }
+   .button{ background: #660099; border: 2px solid #c0c0c0; color: #ffffff; }
+   .button:hover {box-shadow: none; color: #000066; background: #ffffff;}
    .content {margin:10px; height:550px;}
    .footer { text-align:right; font-size:10pt; margin:10px;
        border-bottom:solid 1px #660099; color:#660099; }

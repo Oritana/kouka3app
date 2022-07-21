@@ -12,9 +12,9 @@ class Person extends Model
     
     public static $rules = array(
         /* 'person_id'=>'required|exists:people,id', */
-        'name' => 'required',             /* 名前は絶対入力 */
+        'name' => 'required|max:30',             /* 名前は絶対入力かつ30文字以内 */
         'mail' => 'email',                /* @必要です */
-        'age' => 'integer|min:17|max:100' /* 17歳以上100歳以下 */
+        'age' => 'integer|min:17|max:100' /* 17歳以上100歳以下で登録 */
         
     );
 
@@ -22,10 +22,4 @@ class Person extends Model
     {
         return $this->id.':'.$this->name.'('.$this->age.')';  /* id,name,ageを文字列にしてまとめて返す */
     }
-
-   /*  public function person()
-    {
-        return $this->hasOne('App\person');
-    } */
-
 }

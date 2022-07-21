@@ -17,22 +17,22 @@
 <p>USER: {{$user->name . ' (' . $user->email . ')'}}</p>
 <form action="{{ url('/logout') }}" method="post">
     {{ csrf_field() }}
-    <button type="submit"><font size="3">logout</font></button>
+    <button type="submit" class="button"><font size="3">logout</font></button>   {{-- ログアウトボタン --}}
 </form>
 @endif
 
     @csrf
     </form>
-   <a href="/kouka3/add">新規登録</a>
+   <a href="/kouka3/add">新規登録</a>     {{-- 新規登録リンクk --}}
    <table>
    <tr><th>Student-ID : Name(Age)</th><th>Mail</th><th>Select</th><th>Update</th><th>Delete</th></tr>
    @foreach ($items as $item)
        <tr>
            <td>{{$item->getData()}}</td>
            <td>{{$item->mail}}</td>
-           <td><a href="/kouka3/show?id={{$item->id}}">詳細</a></td>
-           <td><a href="/kouka3/edit?id={{$item->id}}">更新</a></td>
-           <td><a href="/kouka3/del?id={{$item->id}}">削除</a></td>
+           <td><a href="/kouka3/show?id={{$item->id}}">詳細</a></td>   {{-- 詳細ページへ --}}
+           <td><a href="/kouka3/edit?id={{$item->id}}">更新</a></td>   {{-- 更新ページへ --}}
+           <td><a href="/kouka3/del?id={{$item->id}}">削除</a></td>    {{-- 削除ページへ --}}
        </tr>
    @endforeach
    </table>
